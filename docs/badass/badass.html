@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Badass Elm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      .small { font-size: 0.5em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .bg {
+        width: 100wh;
+        height: 100wh;
+        background-image: url(buster-logo.png);
+        background-repeat: no-repeat;
+        background-position: left bottom; 
+      }
+      img {
+        width: 80%;
+      }
+      .side-by-side img{
+        width : 48%;
+        display: inline-block;
+      }
+      .sixty img {
+        width: 60%;
+      }      
+      .fifty img {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+
+class: center, middle, inverse, large
+
+# Badass Elm
+
+[A [quick](#) introduction to Elm]
+
+???
+
+
+---
+
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+class: large
+
+# Agenda
+
+1. Why Elm?
+2. Examples / Q&A
+
+???
+
+
+---
+
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+
+layout: false
+.left-column[
+  ## Why Elm?
+]
+.right-column.large[
+
+1. Simple vs. Easy
+
+2. Maintainable & Reliable 
+
+]
+
+???
+- one of, toy projects 
+
+---
+
+class: center, middle
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# Simple vs. Easy
+.side-by-side[
+![cable good](cable_good.jpg) ![cable bad](cable_bad.jpg)
+]
+
+???
+
+simplu - ceva usor de inteles;  un rol, un concept, o dimensiune 
+usor - ceva la indemana; familiar, deja cunoscut
+---
+
+class: center, middle 
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# Maintainable & Reliable
+
+stateless functions ➞ easy to refactor ➞ no runtime errors 
+ 
+---
+
+class: center, middle
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# Maintainable & Reliable
+
+ ![](noredink.png)
+
+
+---
+
+class: center, middle, inverse, large
+# Examples 
+
+[ how to become a [badass]() at Elm ]
+
+
+---
+class: center, middle, large
+
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+# Badass
+
+.center[![badass](badass.png)]
+
+.small.pull-right[\* from Badass by Kathy Sierra]
+???
+
+---
+
+class: center, middle,  
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+# Elm = immutable data + functions
+
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+
+.left-column[
+  ## Elm Basics: Data 
+]
+.right-column[
+
+## Simple Data
+```elm
+name = "John Wayne"
+
+age = 72 
+
+weightAtBirth = 5.9
+
+wives = ["Josephine", "Esperanza", "Pilar"]
+
+```
+
+## Simple Data with type annotation
+```elm
+
+name : String 
+name = "John Wayne"
+
+age : Int 
+age = 72 
+
+weightAtBirth : Float 
+weightAtBirth = 5.9
+
+wives : List String
+wives = ["Josephine", "Esperanza", "Pilar"]
+
+```
+
+]
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+
+.left-column[
+  ## Elm Basics: Data 
+]
+.right-column[
+
+## Records
+```elm
+john = 
+  { name = "John Wayne"
+  , age = 72 
+  , weightAtBirth = 5.9
+  , wives = ["Josephine", "Esperanza", "Pilar"]
+  }
+```
+
+## Records with type annotation
+```elm
+type alias Actor = 
+  { name: String
+  , age: Int
+  , weightAtBirth : Float
+  , wives : List String
+  }
+
+john : Actor 
+john = 
+  { name = "John Wayne"
+  , age = 72 
+  , weightAtBirth = 5.9
+  , wives = ["Josephine", "Esperanza", "Pilar"]
+  }
+```
+]
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+
+.left-column[
+  ## Elm Basics: Data 
+]
+.right-column[
+
+## Algebraic Data Types - ADT
+```elm
+
+type Bool = True | False 
+
+type Maybe a = Just a | Nothing 
+
+type Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun
+
+type Tree a = Empty | Node a (Tree a) (Tree a)
+
+type Role = Ceo | Manager | Drone 
+
+type Entity = Person String Role | Machine UUID 
+
+```
+]
+
+???
+- permit structurarea starii programului intr-un mod usor de inteles. 
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Simple Functions
+```elm
+
+add2 n = n + 2 
+
+double n = n * 2
+
+isNegative n = n < 0
+
+fst (a, b) = a
+
+fib n =
+  if n < 2 then
+    1
+  else
+    fib (n - 1) + fib (n - 2)
+
+```
+
+]
+
+
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Simple Functions with type annotation
+```elm
+
+add2 : number -> number
+add2 n = n + 2 
+
+double : Float -> Float
+double n = n * 2
+
+isNegative : Int -> Int 
+isNegative n = n < 0
+
+fst : (a, b) -> a
+fst (a, b) = a
+
+fib : Int -> Int 
+fib n =
+  if n < 2 then
+    1
+  else
+    fib (n - 1) + fib (n - 2)
+
+```
+
+]
+
+
+---
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Higher order functions
+```elm
+
+add2 n = n + 2 
+
+double n = n * 2
+
+addAndMultiply add multiply n =
+  multiply (add n)
+
+result = 
+  addAndMultiply add2 double 2
+
+```
+
+
+## Function composition
+```elm
+
+squreIsNotEven = 
+  sqrt >> isEven >> not
+
+```
+]
+
+
+
+
+---
+layout: false
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Function application
+```elm
+scale 2 (move (10,10) (filled blue (ngon 5 30)))
+
+ngon 5 30
+  |> filled blue
+  |> move (10,10)
+  |> scale 2
+
+```
+]
+
+???
+
+
+---
+layout: false
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Pattern Matching 
+```elm
+
+type Msg  = Increment | Decrement | Add Int 
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Increment ->
+      model + 1
+    
+    Decrement ->
+      model - 1
+
+    Add i ->
+      model + i
+
+```
+]
+
+???
+
+---
+layout: false
+.left-column[
+  ## Elm Basics: Functions 
+]
+.right-column[
+
+## Pattern Matching in arguments 
+```elm
+
+type alias Actor = 
+  { name : String 
+  , age : Int 
+  } 
+
+freakyAge : Actor -> Int
+freakyAge { age } = age // 2 + 7  
+
+freakyAge : Actor -> Int
+freakyAge actor = actor.age // 2 + 7  
+
+
+```
+
+
+
+]
+
+???
+
+---
+
+class: center, middle
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# The Elm Architecture
+
+Level 1: Functions 
+
+.large.remark-code[data ➞ function ➞ DOM]
+
+---
+layout: false
+.left-column[
+  ## Level 1: Functions 
+]
+.right-column[
+
+```elm
+import Html exposing (text)
+
+main =
+  text "Hello, World!"
+```
+
+```elm
+import Html exposing (Html, text)
+
+greet: String -> Html msg
+greet name =
+  text ("Hello, " ++ name ++ "!")
+
+target : String 
+target = "World"
+
+main : Html msg
+main =
+  greet target
+  
+```
+]
+---
+
+class: center, middle
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# The Elm Architecture
+
+Level 2: Simple State Transformations 
+
+.sixty[![](TEALevel2.png)]
+
+---
+
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+.left-column[
+  ## Level 2: Simple State 
+]
+.right-column[
+
+```elm
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+main = 
+  Html.beginnerProgram 
+    { model = model, view = view, update = update }
+
+-- MODEL
+type alias Model = Int
+
+model : Model
+model =  0
+
+-- UPDATE
+type Msg  = Increment | Decrement
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Increment ->
+      model + 1
+    Decrement ->
+      model - 1
+
+-- VIEW
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick Decrement ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick Increment ] [ text "+" ]
+    ]
+```
+]
+
+---
+
+class: center, middle
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+ 
+# The Elm Architecture
+
+Level 3: Side-Effects 
+
+.fifty[![](TEALevel3.png)]
+
+???
+Cats example 
+
+---
+
+layout: false
+background-image: url(elm_logo.svg)
+background-position: left 1em bottom 1em
+
+.left-column[
+  ## Interop 
+]
+.right-column[
+
+## Integrating Elm into your app
+
+```html
+<div id="elm"></div>
+
+<script src="elm.js"></script>
+
+<script>
+    var node = document.getElementById('elm');
+    var app = Elm.Main.embed(node);
+</script>
+```
+]
+
+---
+class: center, middle, inverse, large
+
+# Thank you! 
+
+
+    </textarea>
+
+    <script src="remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="remark.language.js"></script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+  </body>
+</html>
