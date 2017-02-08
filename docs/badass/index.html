@@ -149,6 +149,9 @@ class: center, middle, inverse, large
 
 ???
 
+Buna seara. Numele meu este Petre Damoc si am venit la invitatia lui Mihai ca sa va vorbesc putin despre Elm. 
+Pentru cei ce nu au auzit de Elm, Elm este un limbaj functional ce compileaza la Javascript. 
+Este proiectat sa genereze aplicatii web performate ce nu dau erori de executie. 
 
 ---
 
@@ -162,7 +165,8 @@ class: large
 2. Examples / Q&A
 
 ???
-
+Prezentarea este structurata in doua parti. 
+Mai intai voi vorbi cateva minute despre avantajele pe care Elm le aduce si apoi voi prezenta cateva exemple ce sper sa va faca familiari cu limbajul. 
 
 ---
 
@@ -183,7 +187,9 @@ layout: false
 ]
 
 ???
-- one of, toy projects 
+Elm este un limbaj de programare simplu ce face lucrurile complexe usoare.
+Avantajele lui devin evidente cand un proiect se intinde pe mai multe luni; cand un proiect trebuie intretinut si eventual extins dupa ce a fost livrat.
+
 
 ---
 
@@ -197,9 +203,16 @@ background-position: left 1em bottom 1em
 ]
 
 ???
-
-simplu - ceva usor de inteles;  un rol, un concept, o dimensiune 
-usor - ceva la indemana; familiar, deja cunoscut
+Ceva simplu este ceva usor de inteles. Ceva ce are un rol, o dimensiune sau trateaza un concept. 
+In contrast, ceva usor este ceva ce este la indemana, ceva ce este familiar, deja cunoscut. 
+Cele doua imagini reprezinta pentru mine contrastul dintre simplu si usor. 
+Imaginea din dreapta a inceput probabil cu un singur cablu introdus in cel mai apropiat port, apoi a fost nevoie de inca un cablu si inca un cablu. 
+Aceasta abordare are avantajele ei. 
+Imaginea din stanga a inceput probabil cu o viziune mai clara despre ce ar fi bine sa fie la final. 
+Aceasta abordare are avantajele ei. 
+Elm este un limbaj declarativ a carui sintaxa este inspirata din Haskell si OCaml. 
+Lucrul acesta il face sa fie nefamiliar pentru majoritatea programatorilor obisnuiti cu limbaje imperative ce au o sintaxa inspirata din C. 
+Multe lucruri nu sunt usoare in Elm dar sunt simple. 
 ---
 
 class: center, middle 
@@ -208,7 +221,18 @@ background-position: left 1em bottom 1em
  
 # Maintainable & Reliable
 
-stateless functions ➞ easy to refactor ➞ no runtime errors 
+"a small number of powerful concepts"
+
+immutable data + stateless functions ➞ easy to refactor ➞ no runtime errors 
+
+???
+Simplitatea limbajului deriva dintr-un numar mic de concepte puternice. 
+Toate datele din Elm sunt immutable. 
+Functiile vor intoarce intotdeauna aceeasi valoare daca primesc aceleasi argumente. 
+Lucrul acesta face codul sa fie foarte predictibil si in consecinta usor de schimbat. 
+Fiecare schimbare este verificata de compilator. 
+Daca schimbarea are efecte in alte parti ale programului, compilatorul ofera indicii legate de ce trebuie schimbat. 
+Astfel sunt eliminate scaparile ce ar putea duce la erori de executie. 
  
 ---
 
@@ -219,7 +243,11 @@ background-position: left 1em bottom 1em
 # Maintainable & Reliable
 
  ![](noredink.png)
+ .small.pull-right[\* Richard Feldman: Elm and React in production]
 
+???
+Richard Feldman, directorul de engineering de la NoRedInk (compania cea mai celebra pentru utilizarea Elm-ului) spunea in Noiembrie ca intr-un an jumate de cand folosesc Elm nu au avut nici o eroare de executie. 
+Intre timp au ajuns la 80 de mii de linii de cod Elm, tot zero erori. 
 
 ---
 
@@ -228,9 +256,12 @@ class: center, middle, inverse, large
 
 [ how to become a [badass]() at Elm ]
 
+???
+Ok, destula filozofie sa trecem la ceva mai practic. 
+Pentru a deveni foarte buni la Elm este nevoie sa fie intelese acele concepte despre care vorbeam mai devreme. 
 
 ---
-class: center, middle, large
+class: center, middle 
 
 background-image: url(elm_logo.svg)
 background-position: left 1em bottom 1em
@@ -240,7 +271,10 @@ background-position: left 1em bottom 1em
 .center[![badass](badass.png)]
 
 .small.pull-right[\* from Badass by Kathy Sierra]
+
 ???
+Orice concept nou invatat, orice aptitudine dobandita trece prin aceste trei etape. 
+Incepe cu totul strain apoi devine cumva familiar si, daca este practicat suficient, sfarseste prin a deveni automat. 
 
 ---
 
@@ -249,6 +283,9 @@ background-image: url(elm_logo.svg)
 background-position: left 1em bottom 1em
 
 # Elm = immutable data + functions
+
+???
+Programele Elm sunt formate din definitii de tipuri de date si functii care opereaza cu aceste tipuri de date. 
 
 
 ---
@@ -293,6 +330,11 @@ wives = ["Josephine", "Esperanza", "Pilar"]
 
 ]
 
+???
+Avem tipuri de date simple: Sir de caractere, Intregi, numere reale, Liste
+Valorile pot fi declarate cu sau fara declararea tipului de date. 
+Daca nu este declarat tipul de date, Elm il va infera. 
+
 ---
 layout: false
 background-image: url(elm_logo.svg)
@@ -333,6 +375,11 @@ john =
 ```
 ]
 
+???
+
+Tipurile de date pot fi compuse in structuri mai complexe.
+La fel ca toate celelate tipuri de date, aceste structuri sunt immutable. 
+
 ---
 layout: false
 background-image: url(elm_logo.svg)
@@ -363,7 +410,10 @@ type Entity = Person String Role | Machine UUID
 ]
 
 ???
-- permit structurarea starii programului intr-un mod usor de inteles. 
+
+Un alt mod in care pot fi compuse tipurile de date este cu ajutorul tipurilor de date algebrice.
+Acest mecanism, numit si tagged union sau union type, permite structurarea starii programului intr-un mod usor de inteles. 
+Permit descompunerea starii intr-un mod mult mai precis. 
 
 ---
 layout: false
@@ -396,7 +446,12 @@ fib n =
 
 ]
 
+???
+Pe langa date avem si functii. 
+Acestea sunt descrise la fel cum sunt descrise si valorile cu diferenta ca parametri lor sunt pusi inainte semnului de egal. 
 
+Functiile pot fi descrise fara descrierea tipulrilor de date pe care le primesc si le produc.
+In acest caz tipurile de date sunt inferate de compilator.
 
 ---
 layout: false
@@ -434,6 +489,8 @@ fib n =
 
 ]
 
+???
+Sau, tipurile de date pot fi declarate explicit. 
 
 ---
 layout: false
@@ -464,12 +521,19 @@ result =
 ## Function composition
 ```elm
 
+(>>) : (a -> b) -> (b -> c) -> (a -> c)
+(>>) f g x =
+  g (f x)
+
 squreIsNotEven = 
   sqrt >> isEven >> not
 
 ```
 ]
 
+???
+Functiile pot avea parametri alte functii. 
+Lucrul acesta face posibla compunere usoara de functii. 
 
 
 
@@ -482,17 +546,28 @@ layout: false
 
 ## Function application
 ```elm
-scale 2 (move (10,10) (filled blue (ngon 5 30)))
 
-ngon 5 30
-  |> filled blue
-  |> move (10,10)
-  |> scale 2
+(|>) : a -> (a -> b) -> b
+(|>) x f =
+  f x
+
+blueNgon =
+  scale 2 (move (10,10) (filled blue (ngon 5 30)))
+
+blueNgon = 
+  ngon 5 30
+    |> filled blue
+    |> move (10,10)
+    |> scale 2
 
 ```
 ]
 
 ???
+Exista inclusiv o functie care primeste o valoare si o alta functie si aplica functia primita asupra acelei valori. 
+Lucrul acesta permite structurarea unei transformari complexe intr-un mod mult mai usor de inteles. 
+Puteti vedea aici si mecanismul de currying. 
+O functie ce primeste doua argumente este transformata intr-o functie ce primeste un singur argument prin aplicare partiala. 
 
 
 ---
@@ -504,6 +579,8 @@ layout: false
 
 ## Pattern Matching 
 ```elm
+
+type alias Model = Int
 
 type Msg  = Increment | Decrement | Add Int 
 
@@ -523,36 +600,9 @@ update msg model =
 ]
 
 ???
-
----
-layout: false
-.left-column[
-  ## Elm Basics: Functions 
-]
-.right-column[
-
-## Pattern Matching in arguments 
-```elm
-
-type alias Actor = 
-  { name : String 
-  , age : Int 
-  } 
-
-freakyAge : Actor -> Int
-freakyAge { age } = age // 2 + 7  
-
-freakyAge : Actor -> Int
-freakyAge actor = actor.age // 2 + 7  
-
-
-```
-
-
-
-]
-
-???
+In oglinda cu tipurile de date avem si pattern matching-ul 
+Lucrul acesta este facut cu o expresie de tip "case".
+Compilatorul va verifica structura tipului de date si va atentiona daca anumite cazuri nu sunt tratate. 
 
 ---
 
@@ -565,6 +615,10 @@ background-position: left 1em bottom 1em
 Level 1: Functions 
 
 .large.remark-code[data ➞ function ➞ DOM]
+
+???
+Sa trecem acum la structura unui program Elm. 
+Cel mai simplu program este o functie ce produce un element Html
 
 ---
 layout: false
@@ -596,6 +650,11 @@ main =
   
 ```
 ]
+
+???
+In cazul de fata, `text` produce un element html de tip textNode. 
+In partea de jos text este folosit in cadrul unei functii de intampinare. 
+
 ---
 
 class: center, middle
@@ -607,6 +666,14 @@ background-position: left 1em bottom 1em
 Level 2: Simple State Transformations 
 
 .sixty[![](TEALevel2.png)]
+
+???
+Cum generarea de html static nu-i chiar atat de interesanta sa trecem la structura unui program dinamic. 
+Aici avem de a face cu Arhitectura Elm. 
+Arhitectura Elm este o arhitectura unidirectionala. 
+Se pleaca de la un model sau o stare a programului. 
+Starea programului este afisata. 
+Interfata afisata produce evenimente ce cu ajutorul functiei update genereaza noua stare a programului si ciclul este reluat. 
 
 ---
 
@@ -655,6 +722,20 @@ view model =
 ```
 ]
 
+???
+Aici avem implementarea unui contor. 
+Modelul este de fapt un numar intreg. 
+apoi definim tipul de mesaj ce va circula in program. 
+Avem incrementare si decrementare
+functia de update trateaza fiecare dintre cele doua mesaje producand urmatoarea stare a sistemului.
+functia de vizualizare afiseaza valoarea modelului incadrata de doua butoate. 
+Unul genereaza mesaje de decrementare, celalalt mesaje de incrementare. 
+Atat. 
+
+Toate programele ce nu necesita informatie externa pastreaza aceasta arhitectura simpla. 
+Numaraul mesajelor poate ajunge sa fie foarte ridicat. 
+Functia de vizualizare poate fi compusa din mai multe functii ce sunt apelate pe componente ale modelului dar structura de ansamblu ramane aceeasi. 
+
 ---
 
 class: center, middle
@@ -668,6 +749,14 @@ Level 3: Side-Effects
 .fifty[![](TEALevel3.png)]
 
 ???
+In cazul in care este nevoie de informatie externa, fie ca-i vorba de un numar aleator sau ca-i vorba de informatie de pe un alt server, arhitectura este extinsa pentru a gestiona in plus comenzi si abonamente. 
+O comanda este o cerinta pe care programul Elm o face catre runtime. 
+In urma acestei cerinte programul va primi un mesaj ce va incapsula rezultatul cerintei. 
+La inializare, pe langa stare programul primeste si comenzile initiale. 
+La fiecare mesaj primit, functia update poate intoarce si o serie de comenzi. 
+Componenta de subscriptions permite abonarea la o serie de mesaje ce sunt generate automat. 
+Un exemplu ar fi un generator ce la fiecare secunda genereaza un mesaj. 
+
 Cats example 
 
 ---
@@ -694,6 +783,12 @@ background-position: left 1em bottom 1em
 </script>
 ```
 ]
+
+???
+Varianta ideala de experimenta cu Elm este sa adaugati putin Elm intr-un program deja existent. 
+Sa-i dati unui mic program Elm ceva de facut. 
+Acesta este modul in care elm poate fi inclus intr-un proiect mai mare. 
+
 
 ---
 class: center, middle, inverse, large

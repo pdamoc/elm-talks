@@ -1,4 +1,4 @@
-module Mario2 exposing (..)
+module Mario exposing (..)
 
 import Html exposing (..)
 import Keyboard
